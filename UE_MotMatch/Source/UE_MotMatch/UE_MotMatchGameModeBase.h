@@ -13,8 +13,5 @@ UCLASS()
 class UE_MOTMATCH_API AUE_MotMatchGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
-	
-	
-	
+
 };
