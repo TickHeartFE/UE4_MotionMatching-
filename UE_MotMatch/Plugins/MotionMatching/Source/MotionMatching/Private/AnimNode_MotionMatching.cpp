@@ -53,7 +53,6 @@ FAnimNode_MotionMatching::FAnimNode_MotionMatching()
 	, ChangeTimeLimit(0.1f)
 	, MaxChanges(2)
 	, ChangeCounter(0)
-
 	, ChangeTimer(0.f)
 	, bLoopAnimation(true)
 {
@@ -186,9 +185,7 @@ void FAnimNode_MotionMatching::OverrideAsset(UAnimationAsset * NewAsset)
 
 void FAnimNode_MotionMatching::GatherDebugData(FNodeDebugData & DebugData)
 {
-
 	UAnimSequence* Sequence = GetCurrentAnim();
-
 	FString DebugLine = DebugData.GetNodeName(this);
 	DebugLine += FString::Printf(TEXT("('%s' Play Time: %.3f)"), Sequence ? *Sequence->GetName() : TEXT("NULL"), InternalTimeAccumulator);
 	DebugData.AddDebugItem(DebugLine, true);
