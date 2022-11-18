@@ -4,16 +4,22 @@
 #include "AnimGraphNode_Base.h"
 #include "AnimNode_MotionField.h"
 #include "AnimGraphNode_MotionField.generated.h"
+
+
 /**
  * 
  */
+
+// AnimationField±à¼­Æ÷Éè¶¨
 /*class that holds Editor version of the AnimGraph Node MotionField , along its tittle, tooltip, Node Color, and the category of the node*/
 UCLASS()
 class MOTIONMATCHINGEDITOR_API UAnimGraphNode_MotionField : public UAnimGraphNode_Base
 {
 	GENERATED_BODY()
+
+
 	UPROPERTY(EditAnywhere, Category = Settings)
-		FAnimNode_MotionField Node;
+	FAnimNode_MotionField Node;
 
 	//~ Begin UEdGraphNode Interface.
 	virtual FLinearColor GetNodeTitleColor() const override;
