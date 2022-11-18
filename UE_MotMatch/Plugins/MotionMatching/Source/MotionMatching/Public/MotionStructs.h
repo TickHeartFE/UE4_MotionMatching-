@@ -8,18 +8,16 @@
  * 
  */
 
-
-
 USTRUCT(BlueprintType)
 struct MOTIONMATCHING_API FKeyPoseData
 {
 	GENERATED_BODY()
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseData")
-		TArray <FTransform> BoneTMs;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseData")
+	TArray <FTransform> BoneTMs;
 	
-	    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseData")
-		FName RetargetSource = NAME_None;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseData")
+	FName RetargetSource = NAME_None;
 
 	FKeyPoseData()
 	{
@@ -51,14 +49,18 @@ struct MOTIONMATCHING_API FKeyPoseData
 		return false;
 	}
 };
+
+
 USTRUCT(BlueprintType)
 struct MOTIONMATCHING_API FTrajectoryPoint
 {
 	GENERATED_BODY()
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trajectory")
-		FTransform m_TM = FTransform::Identity;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trajectory")
-		float m_TimeDelay = 0.f;
+	FTransform m_TM = FTransform::Identity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Trajectory")
+	float m_TimeDelay = 0.f;
 
 	FTrajectoryPoint()
 	{
@@ -79,11 +81,13 @@ struct MOTIONMATCHING_API FTrajectoryData
 {
 	GENERATED_BODY()
 
+	// 首先有个TArra,里面存储着FTrajectoryPoint的列表数据
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrajectoryData")
-		TArray <FTrajectoryPoint> TrajectoryPoints;
+	TArray <FTrajectoryPoint> TrajectoryPoints;
 
+	// 然后有一个EndVel进行记录最后的终点
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrajectoryData")
-		FVector EndVel = FVector::ZeroVector;
+	FVector EndVel = FVector::ZeroVector;
 
 	FTrajectoryData()
 	{
@@ -100,11 +104,11 @@ struct MOTIONMATCHING_API FJointData
 {
 	GENERATED_BODY()
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
-		FVector BoneCSPos = FVector::ZeroVector;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
+	FVector BoneCSPos = FVector::ZeroVector;
 
-	    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
-		FVector BoneCSVel = FVector::ZeroVector;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
+	FVector BoneCSVel = FVector::ZeroVector;
 
 	FJointData()
 	{
@@ -120,11 +124,11 @@ struct MOTIONMATCHING_API FMotionPose
 {
 	GENERATED_BODY()
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
-		FTrajectoryData PresentTrajectory;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
+	FTrajectoryData PresentTrajectory;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PoseMotionData")
-		FTrajectoryData FutureTrajectory;
+	FTrajectoryData FutureTrajectory;
 
 	FMotionPose()
 	{

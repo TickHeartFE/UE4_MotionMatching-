@@ -28,22 +28,23 @@ class MOTIONMATCHING_API UMyBlueprintFunctionLibrary : public UBlueprintFunction
 	GENERATED_BODY()
 	
 	
-		UFUNCTION(BlueprintCallable, Category = "shit")
-		static void PoseGetTest(const UAnimSequence* InSequence, const float AtTime, const bool bExtractRootMotion, TArray <FTransform>& OutBoneTransforms);
+	UFUNCTION(BlueprintCallable, Category = "shit")
+	static void PoseGetTest(const UAnimSequence* InSequence, const float AtTime, const bool bExtractRootMotion, TArray <FTransform>& OutBoneTransforms);
 
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static FTransform GetBoneCSTM(const UAnimSequence * InSequence, const float AtTime, const bool bUseRawData, const int BoneIndex);
+	static FTransform GetBoneCSTM(const UAnimSequence * InSequence, const float AtTime, const bool bUseRawData, const int BoneIndex);
 	
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static FQuat GetQuat(const FTransform InTM);
+	static FQuat GetQuat(const FTransform InTM);
 
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static bool BuildTrajectoryData(FTrajectoryData& OutTrajectory, const TArray <FTransform> PastTMs, const TArray <FVector> Velocities);
+	static bool BuildTrajectoryData(FTrajectoryData& OutTrajectory, const TArray <FTransform> PastTMs, const TArray <FVector> Velocities);
+	
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static int EvaluateMotionFieldToData(UMotionField* MotionField, const float Responsiveness, const float PoseStrength, const FTrajectoryData DesiredTrajectory, const FTrajectoryData PresentTrajectory, const TArray <FJointData> PresentJointData, const FVector PresentVel, float & OutLowestCost);
+	static int EvaluateMotionFieldToData(UMotionField* MotionField, const float Responsiveness, const float PoseStrength, const FTrajectoryData DesiredTrajectory, const FTrajectoryData PresentTrajectory, const TArray <FJointData> PresentJointData, const FVector PresentVel, float & OutLowestCost);
 
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static void BuildGoal(FTrajectoryData& OutGoal, const FTransform DesiredTransform, const float TargetUUS, const FTransform RootWorldTM);
+	static void BuildGoal(FTrajectoryData& OutGoal, const FTransform DesiredTransform, const float TargetUUS, const FTransform RootWorldTM);
 
 	UFUNCTION(BlueprintCallable, Category = "shit")
 	static void GetMotionDataFromAnimation
@@ -56,12 +57,13 @@ class MOTIONMATCHING_API UMyBlueprintFunctionLibrary : public UBlueprintFunction
 		TArray <FJointData>& OutJointData,
 		FTransform& OutPastTMRel
 	);
+
 	UFUNCTION(BlueprintCallable, Category = "shit")
-		static float CompareAnimFramesPoseCost
-		(
-			const UAnimSequence* InSequence,
-			const TArray <FName> MotionBones,
-			const int32 Frame1,
-			const int32 Frame2
-		);
+	static float CompareAnimFramesPoseCost
+	(
+		const UAnimSequence* InSequence,
+		const TArray <FName> MotionBones,
+		const int32 Frame1,
+		const int32 Frame2
+	);
 };
