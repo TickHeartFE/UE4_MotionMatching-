@@ -18,17 +18,7 @@ FAnimNode_MotionField::FAnimNode_MotionField()
 	//, NumPointsPerSecond(10)
 	, BlendTime(0.3f)
 	, CurrentAnimIndex(0)
-
-	
-
-	
-
-	
-
-
-	
 	, ChangeTimer(0.f)
-
 	, LastSwitch(false)
 	, Pause(false)
 {
