@@ -89,6 +89,7 @@ struct MOTIONMATCHING_API FTrajectoryData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TrajectoryData")
 	FVector EndVel = FVector::ZeroVector;
 
+	// Empty Constructer
 	FTrajectoryData()
 	{
 		TrajectoryPoints.Empty();
